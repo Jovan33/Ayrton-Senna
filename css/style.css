@@ -1,0 +1,824 @@
+*{
+	margin:0px;
+	padding:0px;
+	box-sizing: border-box;
+	font-family: "Arsenal",sans-serif;
+    text-wrap: wrap;
+    overflow-wrap: break-word;
+    text-align: left;
+    scroll-behavior: smooth;
+    letter-spacing: 1.5px;
+}
+                /* Font */
+.arsenal-regular{
+    font-family: "Arsenal", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+.arsenal-regular .navitem{
+    font-weight: 700;
+}
+                /* Pozadinska boja */
+#header,.hrline,.kar,footer{
+    background-color: #333333;
+}
+
+body{
+    background-color: #f1e0c1;
+}
+                /* Animacije */
+@keyframes fade-down{
+    from{
+        opacity: 0;
+        transform: translateY(-70px); 
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+@keyframes fade-in {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+  
+@keyframes fade-up{
+    from{
+        filter: blur(2px);
+        opacity: 0;
+        transform: translateY(20px); 
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0); 
+    } 
+}
+@keyframes fade-left{
+    from{
+        opacity: 0;
+        filter: blur(2px);
+        transform: translateX(-10px); 
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+@keyframes fade-right{
+    from{
+        filter: blur(2px);
+        opacity: 0;
+        transform: translateX(20px); 
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+@keyframes skrolovan{
+    from{ 
+        opacity: 0;
+        transform: translateY(75px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* NA SVE OSIM PRVE ANIMACIJU MENIJA */
+
+
+
+#hcontainer{
+    animation: fade-down 1s ease-in-out;
+}
+.dugme{
+    animation: skrolovan 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+.senna-text{
+    animation: fade-up 1.4s ease-in-out;
+    filter: blur(0);
+}
+.senna-text h1:before{
+    animation: fade-left 1.8s ease-in-out;
+}
+.senna-text h1:after{
+    animation: fade-right 1.8s ease-in-out;
+    filter: blur(0);
+}
+.border.in-view{
+    animation: fade-left 0.9s ease-in-out;
+    box-shadow: 0 4px 6px 1px rgba(0, 0, 0, 0.5);
+    filter: blur(0);
+}
+.text p.in-view{
+    transition: all 1.5s;
+    box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+h1,h2,h3,p{
+    color: white;
+} 
+img{
+    max-width: 100%;
+    pointer-events: none;
+    height: auto;
+} 
+a{
+	text-decoration:none;
+    display: inline-block;
+}
+                /* Navigaijca */
+#nav ul{
+    list-style-type: none;
+}
+#nav ul li{
+    display: inline;
+}
+.navitem{
+    margin-right: 50px;
+}
+#nav a{
+    position: relative;
+    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: 600;
+    color: white;
+}
+.skroldugme{
+    opacity: 0;
+    position: fixed;
+    z-index: 10;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    background-color: rgb(240, 210, 154);
+    color: white;
+    border-radius: 50%;
+    padding: 10px 15px;
+    font-size: 20px;
+}
+#nav a.ovastrana{
+    color: rgb(240, 210, 154);
+}
+.ovastrana::before{
+    content: '';
+    position: absolute;
+    width: 98%;
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background-color: rgb(240, 210, 154);
+    border-radius: 10px;
+}
+#nav a::after{
+    content: '';
+    position: absolute;
+    width: 98%;
+    transform: scale(0);
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background-color: rgb(240, 210, 154);
+    border-radius: 10px;
+    transition: transform 0.25s ease-out;
+}
+#nav a:hover::after{
+    transform-origin: center;
+    transform: scale(1);
+}
+#header h1{
+    color: rgba(255, 255, 255, 0.856);
+    cursor: pointer;
+}
+.pozadina{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    background-image: url('../img/senapoz.jpg');
+    background-position: 50% 45%;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+}
+.galerija{
+    height: 50vh;
+    background-image: url('../img/senna-kaciga.jpg');
+    background-size: cover;
+}
+#hcontainer{
+    height: auto;
+    width: 80%;
+    margin: 0 10%;
+    position: relative;
+    z-index: 2;
+}
+.iznad{
+    float: left;
+}
+#header{
+    display: flex;
+    padding: 15px 75px;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+#logo{
+    width: 70px;
+}
+.hrline{
+    height: 10px;
+    width: 100%;
+    margin-bottom: 150px;
+}
+                /* Pozadina */
+.cover{
+    background-color: rgba(48, 49, 56, 0.4);
+    width: 100%;
+    height: 100%;
+}
+.cleaner{
+    clear: both;
+}
+.senna-text{
+    height: 100px;
+    width: 400px;
+    position: absolute;
+    left: 40%;
+    top: 50%;
+    background-color:rgba(0, 0, 0, 0.277);
+    border-radius: 30px; 
+    transition: 0.15s;
+}
+.senna-text:hover{
+    transition: 300ms;
+    transform: scale(1.02);
+    cursor: pointer;
+}
+.senna-text h1{
+    text-align: center;
+    padding-top: 28px;
+}
+.senna-text h1:before{
+    content: '';
+    display: block;
+    height: 4px;
+    width: 50px;
+    background: white;
+    position: absolute;
+    left: 12%;
+    top: 50%;
+    z-index: 3;
+}
+.senna-text h1:after{
+    content: '';
+    display: block;
+    height: 4px;
+    width: 50px;
+    background: white;
+    position: absolute;
+    right: 12%;
+    top: 50%;
+    z-index: 3;
+}
+.galerija-text{
+    width: 340px;
+}
+.galerija-text h1:before{
+    left: 20%;
+    width: 40px;
+}
+.galerija-text h1:after{
+    right: 20%;
+    width: 40px;
+}
+
+            /* Glavni deo sajta */
+#main{
+    height: auto;
+    width: 100%;
+    animation: 1s fade-in ease-in-out;
+}
+.holder{
+    margin-top: 50px;
+    margin-bottom: 270px;
+    height: auto;
+    width: 100%;
+}
+.hdostignuca{
+    margin-bottom: 150px;
+}
+.gore{
+    height: 100px;
+    width: 100%;
+}
+.gore h2{
+    color: #000000;
+    margin-left: 15%;
+    padding-top: 55px;
+    font-size: 2em;
+    font-weight: 600;
+}
+h2.Imola{
+    margin-left: 29%;
+}
+h2.Ayrton{
+    margin-left: 24%;
+}
+.dole{
+    height: auto;
+    width: 100%;
+    padding: 10px;
+}
+figure{
+    border-bottom: solid 2px;
+}
+.border{
+    height: auto;
+    width: 40%;
+    margin-left: 12%;
+    margin-top: 20px;
+    border-top-right-radius: 1.20rem;
+    border-top-width:10px;
+    border-right-width: 10px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-style: solid;
+    border-color: rgb(23, 67, 147);
+    float: left;
+    position: relative;
+}
+
+.border.bdole{
+    border-top-width: 0;
+    border-top-left-radius: 0;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-bottom-width: 10px;
+}
+#SennaF1,#Imola{
+    border-top-right-radius: 0.5rem;
+    float: left;
+}
+.text{
+    width: 30%;
+    height: 300px;
+    margin-top: 45px;
+    margin-right: 12%;
+    float: right;
+}
+.text p{
+    color: #000000;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: solid #000000;
+    border-right: solid #000000;
+    border-bottom-right-radius: 10px;
+    border-width: 2px;
+}
+.kar{
+    height: 40px;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+.kar i.fa-sliders{
+    color: white;
+    height: auto;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 20px;
+    font-size: 20px;
+}
+.dole h3{
+    height: auto;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+#dholder{
+    height: 200px;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#dostignuca{
+    height: 110px;
+    width: 200px;
+    margin:0 auto;
+    background-color: rgb(243, 243, 243);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: all 500ms;
+}
+#dostignuca span{
+    font-weight: bolder;
+    position: relative;
+    top: -40px;
+    font-size: 26px;
+    transition: all 500ms;
+    color: rgb(36, 98, 211);
+    padding-top: 12px;
+}
+#dostignuca p{
+    letter-spacing: 0.05em;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: rgb(21 21 30);
+    font-weight: 600;
+}
+#dostignuca:hover .broj{
+    color: #3ed70f;
+    transition: all 300ms;
+}
+#dostignuca i{
+    font-size: 22px;
+}
+#dostignuca:hover{
+    box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1) inset,
+    -10px -10px 10px white inset;
+    transition: all 300ms;
+}
+footer{
+    position: relative;
+    height: 300px;
+    width: 100%;
+}
+footer ul{
+    list-style-type: none;
+}
+footer ul li{
+    transition: all 300ms ease-in-out;
+}
+footer ul li a:hover {
+    padding-left: 10px;
+    padding-right: 10px;
+    color: rgb(243, 184, 74);
+    transition: all 300ms ease-in-out;
+}
+.kaciga{
+    width: 120px;
+    position: absolute;
+    left: 46.5%;
+    top: -65px;
+}
+.futergore{
+    height: 70%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.brzimeni,.kontakt{
+    height: 180px;
+    width: 320px;
+}
+.brzimeni a{
+    transition: all 300ms;
+    font-size: 22px;
+    padding-bottom: 5px;
+    color: wheat;
+}
+.brzimeni h3{
+    text-align: right;
+}
+.brzimeni i{
+    font-size: 20px;
+}
+a.ovastranafooter{
+    color: rgb(243, 184, 74);
+}
+.futergore h3{
+    text-transform: uppercase;
+    color: wheat;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.brzimeni ul {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-end;
+}
+.kontakt a{
+    transition: all 300ms;
+    color: wheat;
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+.futerdole{
+    height: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.futerdole a:hover{
+    padding-left: 0;
+    padding-right: 0;
+}
+.socmreze,.copyright,.logofuter{
+    height: 100%;
+    width: 250px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.logofuter a{
+    width: 30%;
+}
+.copyright p{
+    font-size: 18px;
+    text-align: center;
+    color: wheat;
+}
+.socmreze ul li{
+    display: inline;
+    font-size: 28px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.socmreze a{
+    color: wheat;
+    transition: all 300ms;
+}
+.socmreze a:hover{
+    color: rgb(243, 184, 74);
+    transition: all 300ms;
+}
+#konth1{
+    text-align: center;
+    margin-top: 200px;
+    color: #000000;
+}
+#hkontakt{
+    height: 600px;
+    width: 100%;
+    margin-bottom: 150px;
+    display: flex;
+    justify-content: center;
+}
+#kontakt{
+    height: 515px;
+    width: 1300px;
+    margin-top: 35px;
+    overflow: hidden;
+    display: flex;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px 1px rgba(0, 0, 0, 0.5);
+    background-color: rgb(240, 210, 154);
+}
+#levo{
+    height: 100%;
+    width: 86%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+#levo img{
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.zoom{
+    overflow: hidden;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+}
+.zoom img{
+    object-fit: cover;
+    transition: all 500ms;
+    transform: scale(1.11);
+    height: 100%;
+}
+.zoom:hover img{
+    transition: all 500ms;
+    transform: scale(1.3);
+}
+#desno{
+    height: 100%;
+    width: 60%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+#desno h2{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 25px;
+    color: #000000;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+label{
+    margin-top: 3px;
+    margin-left: 80px;
+    font-weight: 600;
+    font-size: 20px;
+}
+form input{
+    margin-right: 15%;
+    margin-left: 15%;
+    margin-bottom: 15px;
+    padding: 10px;
+    height: 40px;
+    border: solid 2px #000000;
+    border-radius: 5px;
+}
+input[type="text"],[type="email"],[type="tel"],[textarea="poruka"]{
+    font-size:15px;
+    font-weight: 700;
+}
+textarea[id="poruka"]{
+    font-size: 15px;
+    font-weight: 700;
+}
+form textarea{
+    margin-left: 15%;
+    margin-right: 15%;
+    border-radius: 5px;
+    height: 70px;
+    border: solid 2px #000000;
+    padding: 10px;
+    resize: none;
+}
+form input#posalji{
+    background-color: rgb(243, 184, 74);
+    width: 120px;
+    position: relative;
+    float: right;
+    font-size: 15px;
+    padding: 8px;
+    padding-left: 15px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+#send{
+    position: relative;
+    height: 55px;
+    width: 120px;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: all 300ms;
+}
+#send input{
+    margin-left: 0;
+    margin-right: 0;
+    cursor: pointer;
+}
+#send:hover{
+    transform: scale(1.1);
+}
+#send .ikona{
+    position: absolute;
+    z-index: 2;
+    transition: all 300ms;
+    right: 5px;
+    margin-right: 15px;
+    bottom: 10px;
+    font-size: 20px;
+}
+#hvala{
+    position: relative;
+    height: 100vh;
+}
+#slika{
+    position: absolute;
+    text-align: center;
+    width: 500px;
+    height: 200px;
+    left: calc(50% - 250px);
+    top: calc(50% - 200px);
+}
+#slika img{
+    width: 250px;
+}
+#hvalah1{
+    height: 150px;
+    width: 500px;
+    margin-top: 50px;
+}
+#hvalah1 h1{
+    text-align: center;
+    margin-bottom: 25px;
+    color: #000000;
+}
+#hvalah1 h2{
+    text-align: center;
+}
+#hvalah1 a{
+    background-color: rgb(243, 184, 74);
+    border-radius: 15px;
+    transition: all 300ms;
+    width: 300px;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 30px;
+    margin-left: 20%;
+    margin-right: 20%
+    
+}
+#hvala a:hover{
+    transform: scale(1.1);
+    transition: all 300ms;
+}
+#hautor{
+    height: 600px;
+    margin-top: 150px;
+    margin-bottom: 250px;
+    width: 100%;
+}
+#autor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    margin: 0 auto;
+}
+#autor img{
+    transition: all 500ms;
+    height: 100%;
+    border-radius: 15px;
+}
+#Jovan{
+    height: auto;
+    width: 500px;
+}
+#slikaautora{
+    box-shadow: 0 4px 6px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    margin-right: 50px;
+    height: 615px;
+}
+.zooma{
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 4px 6px 1px rgba(0, 0, 0, 0.5);
+}
+#oautoru{
+    height: 275px;
+    width: 550px;
+    padding: 10px;
+    margin-left: 50px;
+    border: solid 3px #000000;
+    border-radius: 15px;
+    box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1);
+    background-color: rgb(240, 210, 154);
+}
+#oautoru h1,p{
+    font-weight: 600;
+    color: #000000;
+}
+#oautoru h1{
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+#oautoru p{
+    font-size: 20px;
+}
+#hgalerija{
+    height: 800px;
+    width: 90%;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    margin-bottom: 150px;
+}
+.slikagalerija{
+    flex: 1 0 21%;
+    margin: 20px;
+    height: auto;
+    width: 300px;
+    border-radius: 20px;
+}
+.slikagalerija img{
+    border-radius: 20px;
+}
+.slikagalerija p{
+    margin-top: 12px;
+    text-align: center;
+}
