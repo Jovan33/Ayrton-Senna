@@ -372,14 +372,14 @@ figure{
 }
 .text{
     width: 31%;
-    height: 300px;
+    height: auto;
     margin-top: 20px;
     margin-right: 12%;
     float: right;
 }
 .text[alt*="Txt-gore"]{
     width: 35%;
-    height: 300px;
+    height: auto;
     margin-top: 15px;
     margin-right: 10%;
     float: right;
@@ -487,7 +487,7 @@ footer ul li a:hover {
 .kaciga{
     width: 120px;
     position: absolute;
-    left: 47%;
+    left: 46.6%;
     top: -65px;
 }
 .futergore{
@@ -785,8 +785,8 @@ form input#posalji{
     box-shadow: 0 4px 6px 1px rgba(0, 0, 0, 0.5);
 }
 #oautoru{
-    height: 275px;
-    width: 550px;
+    height: 295px;
+    width: 580px;
     padding: 10px;
     margin-left: 50px;
     border: solid 3px #000000;
